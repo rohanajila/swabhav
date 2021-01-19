@@ -1,6 +1,5 @@
 this
 is
-a
 text
 document
 for practice
