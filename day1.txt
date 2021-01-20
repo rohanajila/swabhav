@@ -1,3 +1,5 @@
 hello world!
 starting with git
 status
+is
+done
