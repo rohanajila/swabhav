@@ -1,2 +1,0 @@
-hello this a new day and we are trying merge
-lets try to merge tnis qith an other branch
