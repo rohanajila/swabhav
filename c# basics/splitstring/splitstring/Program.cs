@@ -10,25 +10,16 @@ namespace splitstring
     {
         static void Main(string[] args)
         {
-            string url = "https://www.swabhav.com?developer='abc':";
-            string cname = url.Split()
-            string dname = url.Substring(35, 3);
+            string url = "https://www.google.com?developer=abc@course=dotnet:";
+            string[] multiArray = url.Split(new Char[] { '.', '@', '='});
 
-            Console.WriteLine(cname);
-            Console.WriteLine(dname);
-
-            url = "https://www.swabhav.com?developer='abc'@course=.net:";
-            string coname = url.Substring(47, 4);
-            Console.WriteLine(cname);
-            Console.WriteLine(dname);
-            Console.WriteLine(coname);
-            url = "https://www.google.com?developer='abc'@course=.net:";
-            cname = url.Substring(12, 6);
-
-            Console.WriteLine(cname);
-
-
-
+          
+            string cname = multiArray[1];
+            string dname = multiArray[3];
+            string coname = multiArray[5];
+            Console.WriteLine("Company name: " + cname);
+            Console.WriteLine("Developer name: " + dname);
+            Console.WriteLine("Course name: " + coname);
             Console.ReadLine();
         }
     }

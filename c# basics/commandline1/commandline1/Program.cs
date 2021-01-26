@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace commandline
+namespace commandline1
 {
     class Program
     {
@@ -15,9 +15,17 @@ namespace commandline
                 arr[i] = int.Parse(args[i]);
             Console.WriteLine("values: ");
             for (int i = 0; i < 4; i++)
-                Console.Write(" "+arr[i]); 
-            
-            Console.ReadLine();
+                Console.Write(" " + arr[i]);
+            Console.WriteLine("\n");
+            for (int i = 0; i < 4; i++)
+            {
+                if (arr[i] % 2 == 0)
+                    Console.WriteLine(arr[i]+" is even");
+                else
+                    Console.WriteLine(arr[i]+" is odd");
+            }
+
+                Console.ReadLine();
         }
     }
 }
