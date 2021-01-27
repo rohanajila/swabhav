@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3002EF3-3BFB-47CC-BD74-9EFBBA1C1934}</ProjectGuid>
+    <ProjectGuid>{98596B78-B4B6-444B-BA8F-323F64364B5C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Chapter_4_1</RootNamespace>
-    <AssemblyName>Chapter_4_1</AssemblyName>
+    <RootNamespace>Candidate_app</RootNamespace>
+    <AssemblyName>Candidate-app</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Candidate.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Puzzle4b.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

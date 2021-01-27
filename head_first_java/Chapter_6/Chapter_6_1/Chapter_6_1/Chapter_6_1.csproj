@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F3002EF3-3BFB-47CC-BD74-9EFBBA1C1934}</ProjectGuid>
+    <ProjectGuid>{EB7DF010-913F-4B0E-9E3C-FE596FE6B6E0}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Chapter_4_1</RootNamespace>
-    <AssemblyName>Chapter_4_1</AssemblyName>
+    <RootNamespace>Chapter_6_1</RootNamespace>
+    <AssemblyName>Chapter_6_1</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Puzzle4b.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

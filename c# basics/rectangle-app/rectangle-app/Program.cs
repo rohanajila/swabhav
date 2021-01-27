@@ -10,11 +10,22 @@ namespace rectangle_app
     {
         static void Main(string[] args)
         {
-            rectangle obj = new rectangle();
-            obj.height = 4;
-            obj.width = 5;
-            obj.color = "red";
-            obj.display();
+            Rectangle obj = new Rectangle();
+            Console.WriteLine("Initial Values: ");
+            Display(obj);
+            obj.setheight();
+            obj.setwidth();
+            obj.setcolor();
+            Console.WriteLine("After entering Values: ");
+            Display(obj);
+            Console.ReadLine();
+        }
+        public static void Display(Rectangle obj)
+        {
+
+            Console.WriteLine("Height = " + obj.getheight());
+            Console.WriteLine("Width = " + obj.getwidth());
+            Console.WriteLine("Color = " + obj.getcolor());
         }
     }
 }
