@@ -11,6 +11,7 @@ namespace rectangle_app
         static void Main(string[] args)
         {
             Rectangle obj = new Rectangle();
+            
             Console.WriteLine("Initial Values: ");
             Display(obj);
             obj.setheight();
@@ -18,6 +19,18 @@ namespace rectangle_app
             obj.setcolor();
             Console.WriteLine("After entering Values: ");
             Display(obj);
+            Rectangle obj1 = obj;
+            Console.WriteLine("obj hashcode" + obj.GetHashCode());
+            Console.WriteLine("obj1 hashcode" + obj1.GetHashCode());
+            Rectangle obj2 = new Rectangle();
+            obj2.setheight();
+            obj2.setwidth();
+            obj2.setcolor();
+            obj1 = obj2;
+            Console.WriteLine("obj hashcode" + obj.GetHashCode());
+            Console.WriteLine("obj1 hashcode" + obj1.GetHashCode());
+            Console.WriteLine("obj2 hashcode" + obj2.GetHashCode());
+
             Console.ReadLine();
         }
         public static void Display(Rectangle obj)

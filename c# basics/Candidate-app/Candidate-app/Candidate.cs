@@ -11,7 +11,13 @@ namespace Candidate_app
         private int id;
         private string name;
         private char grade;
+        private int age;
 
+        public void setAge()
+        {
+            Console.WriteLine("Enter the age of candidate : ");
+            age = int.Parse(Console.ReadLine());
+        }
         public void setId()
         {
             Console.WriteLine("Enter the candidate id: ");
@@ -27,6 +33,10 @@ namespace Candidate_app
             Console.WriteLine("Enter the candidate Grade: ");
             grade = char.Parse(Console.ReadLine());
         }
+        public int getAge()
+        {
+            return age;
+        }
         public int getId()
         {
             return id;
@@ -39,7 +49,7 @@ namespace Candidate_app
         {
             return grade;
         }
-        public Candidate comparison(Candidate a,Candidate b)
+        public Candidate compareGrade(Candidate a,Candidate b)
         {
             Console.WriteLine("The better candidate is: ");
             Candidate test = new Candidate();
@@ -53,6 +63,15 @@ namespace Candidate_app
                 Console.WriteLine("Both candidates have the same score");
             return test;
             
+        }
+        public Candidate compareAge(Candidate a,Candidate b)
+        {
+            if (a.age > b.age)
+                return a;
+            
+            else
+                return b;
+
         }
     }
 }
