@@ -14,31 +14,22 @@ namespace rectangle_app
             
             Console.WriteLine("Initial Values: ");
             Display(obj);
-            obj.setheight();
-            obj.setwidth();
-            obj.setcolor();
+            Console.WriteLine("Enter the height:");
+            obj.Height=int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the width:");
+            obj.Width= int.Parse(Console.ReadLine());
+            Console.WriteLine("Enter the color:");
+            obj.Color=Console.ReadLine();
             Console.WriteLine("After entering Values: ");
             Display(obj);
-            Rectangle obj1 = obj;
-            Console.WriteLine("obj hashcode" + obj.GetHashCode());
-            Console.WriteLine("obj1 hashcode" + obj1.GetHashCode());
-            Rectangle obj2 = new Rectangle();
-            obj2.setheight();
-            obj2.setwidth();
-            obj2.setcolor();
-            obj1 = obj2;
-            Console.WriteLine("obj hashcode" + obj.GetHashCode());
-            Console.WriteLine("obj1 hashcode" + obj1.GetHashCode());
-            Console.WriteLine("obj2 hashcode" + obj2.GetHashCode());
-
             Console.ReadLine();
         }
         public static void Display(Rectangle obj)
         {
 
-            Console.WriteLine("Height = " + obj.getheight());
-            Console.WriteLine("Width = " + obj.getwidth());
-            Console.WriteLine("Color = " + obj.getcolor());
+            Console.WriteLine("Height = " + obj.Height);
+            Console.WriteLine("Width = " + obj.Width);
+            Console.WriteLine("Color = " + obj.Color);
         }
     }
 }
