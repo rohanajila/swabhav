@@ -48,14 +48,15 @@ namespace Circle_app
 
             }
             obj[max].MaxRadius = 1;
-            for(int i=0;i<3;i++)
+            for (int i = 0; i < 3; i++)
             {
-                if(obj[i].MaxRadius==1)
+                if (obj[i].MaxRadius == 1)
                 {
                     Console.WriteLine("\nMax Radius\nCircle " + (i + 1));
                     Console.WriteLine(obj[i].Radius);
                 }
             }
         }
+       
     }
 }

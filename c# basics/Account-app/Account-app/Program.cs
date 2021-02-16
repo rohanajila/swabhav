@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 namespace Account_app
 {
@@ -25,6 +27,10 @@ namespace Account_app
             withdrawResponse = obj1.Withdraw(500);
             WithdrawMessage(withdrawResponse, obj1);
             AccInfoDisplay(obj1);
+            FileStream fileStream = new FileStream(@"D:test1.txt", FileMode.Create);
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(fileStream, obj1);
+
             Console.ReadKey();
 
         }
