@@ -49,7 +49,7 @@ namespace ShoppingCart_app.Model
         }
         public override string ToString()
         {
-            return "\nOrder Id: " + Id + ", Date: " + Date + ",\n\tLine Item List: \n" + string.Join(Environmen);
+            return "\nOrder Id: " + Id + ", Date: " + Date + ",\n\tLine Item List: \n"+ string.Join();
         }
 
 

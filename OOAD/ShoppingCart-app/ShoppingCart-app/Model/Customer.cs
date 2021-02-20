@@ -8,36 +8,24 @@ namespace ShoppingCart_app.Model
 {
     class Customer
     {
-        private Guid id;
-        private string name;
-        private string address;
-        private List<Order> orders;
-        public Customer(Guid id,string name,string address)
+        private int _id;
+        private string _name;
+        private string _address;
+        private List<Order> _orders=new List<Order>();
+        public Customer(int id,string name,string address)
         {
-            this.id = id;
-            this.name = name;
-            this.address = address;
-            orders = new List<Order>();
+            _id = id;
+            _name = name;
+            _address = address;
         }
         public void AddOrder(Order order)
         {
-            orders.Add(order);
+            _orders.Add(order);
         }
-        public Guid Id
-        {
-            get { return id; }
-        }
-        public string Name
-        {
-            get { return name; }
-        }
-        public string Address
-        {
-            get { return address; }
-        }
-        public List<Order> Orders
-        {
-            get { return orders; }
-        }
+        public int Id{get=>_id; }
+        public string Name{get=> _name; }
+        public string Address{get=> _address; }
+        public List<Order> Orders{get=> _orders; }
+        
     }
 }
