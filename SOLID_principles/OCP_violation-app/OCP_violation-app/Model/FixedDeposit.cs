@@ -32,8 +32,20 @@ namespace OCP_violation_app.Model
             double rateOfInterest = 0;
             if (Festival.ToString().Equals("NORMAL"))
             {
-                interest = Amount * Festival.ToStr *
-                    }
+                rateOfInterest = 7;
+                interest = (Amount * rateOfInterest * Years) / 100;
+            }
+            if (Festival.ToString().Equals("DIWALI"))
+            {
+                rateOfInterest = 4;
+                interest = (Amount * rateOfInterest * Years) / 100;
+            }
+            if (Festival.ToString().Equals("HOLI"))
+            {
+                rateOfInterest = 5;
+                interest = (Amount * rateOfInterest * Years) / 100;
+            }
+            return interest;
         }
     }
     enum FestivalType { NORMAL=7,HOLI=5,DIWALI=4};
