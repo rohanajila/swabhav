@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart_app.Model
 {
-    class Order
+    public class Order
     {
         private int _id;
         private DateTime _date;
@@ -49,7 +49,7 @@ namespace ShoppingCart_app.Model
         }
         public override string ToString()
         {
-            return "\nOrder Id: " + Id + ", Date: " + Date + ",\n\tLine Item List: \n"+ string.Join();
+            return "\nOrder Id: " + Id + ", Date: " + Date + ",\nOrder List: \n"+ string.Join(",",_items);
         }
 
 

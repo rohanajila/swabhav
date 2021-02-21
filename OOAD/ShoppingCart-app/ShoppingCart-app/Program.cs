@@ -20,14 +20,14 @@ namespace ShoppingCart_app
             Order o1 = new Order(101, new DateTime(2021, 02, 19));
             o1.AddItem(new LineItem(201, 14, apple));
             o1.AddItem(new LineItem(202, 8, mango));
-            o1.AddItem(new LineItem(203, 5, mango));
+            o1.AddItem(new LineItem(202, 5, mango));
 
-            Order o2 = new Order(201, new DateTime(2021, 02, 20));
+           /* Order o2 = new Order(201, new DateTime(2021, 02, 20));
             o1.AddItem(new LineItem(204, 2, apple));
-            o1.AddItem(new LineItem(203, 5, mango));
+            o1.AddItem(new LineItem(203, 5, mango));*/
 
             c1.AddOrder(o1);
-            c1.AddOrder(o2);
+           // c1.AddOrder(o2);
             printInfo(c1);
             Console.Read();
 

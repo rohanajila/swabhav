@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShoppingCart_app.Model
 {
-    class LineItem
+    public class LineItem
     {
         private int _id;
         private int _quantity;
@@ -26,7 +26,7 @@ namespace ShoppingCart_app.Model
         public Product Product{get=> _product; }
         public override string ToString()
         {
-            return "\t\tLine item Id: " + Id + ", Products: " + Product + ", Quantity" + Quantity + ", Total Cost" + CalculateTotalCost();
+            return "\nLine item Id: " + Id + ", Products: " + Product + ", Quantity" + Quantity + ", Total Cost" + CalculateTotalCost();
         }
     }
 }
