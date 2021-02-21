@@ -12,7 +12,7 @@ namespace ShoppingCart_Test
         public void CalculateTotalCostTest()
         {
             //Arrange
-            Product product = new Product(1, "Mango", 50.50, 10.0f);
+            ShoppingCart_app.Model.Product product = new ShoppingCart_app.Model.Product(1, "Mango", 50.50, 10.0f);
             LineItem item = new LineItem(1, 5, product);
              int quantity = 5;
             double price = 50.50;
