@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRP_violation_app.Model
+namespace SRP_solution_app.Model
 {
     class Invoice
     {
@@ -13,7 +13,7 @@ namespace SRP_violation_app.Model
         private double _amount;
         private double _discountPercentage;
         private float _GST;
-        public Invoice(int no,string name,double amount,double discountPercentage,float GST)
+        public Invoice(int no, string name, double amount, double discountPercentage, float GST)
         {
             _no = no;
             _name = name;
@@ -39,15 +39,7 @@ namespace SRP_violation_app.Model
         {
             double discount = CalculateDiscount();
             double gst = CalculateGST();
-            return Amount - discount+gst;
+            return Amount - discount + gst;
         }
-        public void PrintToConsole()
-        {
-            Console.WriteLine("Invoive no.: " +No);
-            Console.WriteLine("Name: " +Name);
-            Console.WriteLine("Discount Percentage: " +DiscountPercentage);
-            Console.WriteLine(" Total Amount.: " +CalculateTotalCost());
-        }
-
     }
 }

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{680022E5-D4F3-415B-9969-4701DEBBB32E}</ProjectGuid>
+    <ProjectGuid>{9F31A5A1-4A40-4067-9545-05412C99A009}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>SRP_violation_app</RootNamespace>
-    <AssemblyName>SRP_violation_app</AssemblyName>
+    <RootNamespace>SRP_solution_app</RootNamespace>
+    <AssemblyName>SRP_solution-app</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Invoice.cs" />
+    <Compile Include="Model\InvoicePrinter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

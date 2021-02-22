@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SRP_violation_app.Model
+namespace SRP_solution_app.Model
 {
     class InvoicePrinter
     {
@@ -18,7 +18,7 @@ namespace SRP_violation_app.Model
             Console.WriteLine("Invoive no.: " + _invoice.No);
             Console.WriteLine("Name: " + _invoice.Name);
             Console.WriteLine("Discount Percentage: " + _invoice.DiscountPercentage);
-            Console.WriteLine(" Total Amount.: " + _invoice.CalculateTotalCost());
+            Console.WriteLine("Total Amount.: " + _invoice.CalculateTotalCost());
         }
     }
 }
