@@ -11,8 +11,8 @@ namespace Guitar_app
         static void Main(string[] args)
         {
             Inventory inventory = new Inventory();
-            inventory.AddGuitar("123",15000, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER));
-            GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC, Wood.ALDER, Wood.ALDER);
+            inventory.AddGuitar("123",15000, new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC,12, Wood.ALDER, Wood.ALDER));
+            GuitarSpec whatErinLikes = new GuitarSpec(Builder.FENDER, "Stratocastor", Type.ELECTRIC,12, Wood.ALDER, Wood.ALDER);
             List<Guitar> matchingGuitars = inventory.search(whatErinLikes);
             if (matchingGuitars.Count != 0)
             {
@@ -42,6 +42,10 @@ namespace Guitar_app
     public enum Wood
     {
         INDIAN_ROSEWOOD, BRAZILIAN_ROSEWOOD, MAHOGANY, MAPLE, COCOBOLO, CEDAR, ADIRONDACK, ALDER, SITKA
+    }
+    public enum Style
+    {
+        A,F
     }
 
 }

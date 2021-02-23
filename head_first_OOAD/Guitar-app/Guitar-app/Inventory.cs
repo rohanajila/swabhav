@@ -8,24 +8,24 @@ namespace Guitar_app
 {
     class Inventory
     {
-        private List<Guitar> guitars;
-        public List<Guitar> Guitars { get => guitars; set => guitars = value; }
+        private List<Instrument> instruments;
+        public List<Instrument> instruments { get => instruments; set => instruments = value; }
         public Inventory()
         {
-            guitars = new List<Guitar>();
+            instruments = new List<Instrument>();
         }
-        public void AddGuitar(string serialNumber,double price,GuitarSpec spec)
+        public void AddInstrument(string serialNumber,double price,InstrumentSpec spec)
         {
-            Guitar guitar = new Guitar(serialNumber, price, spec);
-            guitars.Add(guitar);
+            Instrument instrument = new Instrument(serialNumber, price, spec);
+            instruments.Add(instrument);
         }
-        public Guitar GetGuitar(String serialNumber)
+        public Instrument GetInstrument(String serialNumber)
         {
           
-            foreach(Guitar getguitar in guitars)
+            foreach(Instrument getinstrument in instruments)
             {
-                if ((getguitar.SerialNumber).Equals(serialNumber))
-                       return getguitar;
+                if ((getinstrument.SerialNumber).Equals(serialNumber))
+                       return getinstrument;
             }
             return null;
         }
@@ -35,20 +35,21 @@ namespace Guitar_app
             for(int i=0;i<guitars.Count;i++)
             {
                 GuitarSpec guitarSpec = guitars[i].Spec;
-                if (guitarSpec.getBuilder() != searchSpec.getBuilder())
-                    continue;
-                string model = searchSpec.Model.ToLower();
-                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitarSpec.Model.ToLower())))
-                    continue;
-                if (searchSpec.getType() != guitarSpec.getType())
-                    continue;
-                if (searchSpec.getTopWood() != guitarSpec.getTopWood())
-                    continue;
-                if (searchSpec.getBackWood() != guitarSpec.getBackWood())
-                    continue;
+                if(guitarSpec.matches(searchSpec))
                 matchingGuitars.Add(guitars[i]);
             }
             return matchingGuitars;
+        }
+        public List<Mandolin> search(MandolinSpec searchSpec)
+        {
+            List<Mandolin> matchingMandolins = new List<Mandolin>();
+            for (int i = 0; i < mandolins.Count; i++)
+            {
+                MandolinSpec mandolinSpec = mandolins[i].Spec;
+                if (mandolinSpec.matches(searchSpec))
+                    matchingMandolins.Add(mandolins[i]);
+            }
+            return matchingMandolins;
         }
     }
 }

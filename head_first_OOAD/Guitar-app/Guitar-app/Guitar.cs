@@ -6,35 +6,21 @@ using System.Threading.Tasks;
 
 namespace Guitar_app
 {
-    class Guitar
+    class Guitar: Instrument
     {
-        private string serialNumber;   
-        private double price;
+        
         private GuitarSpec spec;  
-        public string SerialNumber
-        {
-            get { return serialNumber; }
-           
-        }
-       
-        public double Price
-        {
-            get { return price; }
-            set { price = value; }
-        }
+        
         public GuitarSpec Spec
         {
             get { return spec; }
            
         }
-        public Guitar()
-        { }
-        public Guitar(string serialNumber,double price,GuitarSpec spec)
+        public Guitar(string serialNumber,double price,GuitarSpec spec):base(serialNumber,price,spec)
         {
-            this.serialNumber = serialNumber;
-            this.price = price;
-            this.spec = spec;
+
         }
+       
 
     }
 }
