@@ -8,20 +8,15 @@ namespace Guitar_app
 {
     class Guitar
     {
-        private string serialNumber;
-        private string model;
+        private string serialNumber;   
         private double price;
-        private GuitarSpec spec;
+        private GuitarSpec spec;  
         public string SerialNumber
         {
             get { return serialNumber; }
-            set { serialNumber = value; }
+           
         }
-        public string Model
-        {
-            get { return model; }
-            set { model = value; }
-        }
+       
         public double Price
         {
             get { return price; }
@@ -30,7 +25,7 @@ namespace Guitar_app
         public GuitarSpec Spec
         {
             get { return spec; }
-            set { spec = value; }
+           
         }
         public Guitar()
         { }

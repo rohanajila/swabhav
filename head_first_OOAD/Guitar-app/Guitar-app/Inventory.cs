@@ -9,6 +9,7 @@ namespace Guitar_app
     class Inventory
     {
         private List<Guitar> guitars;
+        public List<Guitar> Guitars { get => guitars; set => guitars = value; }
         public Inventory()
         {
             guitars = new List<Guitar>();
@@ -31,13 +32,23 @@ namespace Guitar_app
         public List<Guitar> search(GuitarSpec searchSpec)
         {
             List<Guitar> matchingGuitars = new List<Guitar>();
-            for(int i=0;i<matchingGuitars.Count;i++)
+            for(int i=0;i<guitars.Count;i++)
             {
-                if(guitars.)
-                {
-
-                }
+                GuitarSpec guitarSpec = guitars[i].Spec;
+                if (guitarSpec.getBuilder() != searchSpec.getBuilder())
+                    continue;
+                string model = searchSpec.Model.ToLower();
+                if ((model != null) && (!model.Equals("")) && (!model.Equals(guitarSpec.Model.ToLower())))
+                    continue;
+                if (searchSpec.getType() != guitarSpec.getType())
+                    continue;
+                if (searchSpec.getTopWood() != guitarSpec.getTopWood())
+                    continue;
+                if (searchSpec.getBackWood() != guitarSpec.getBackWood())
+                    continue;
+                matchingGuitars.Add(guitars[i]);
             }
+            return matchingGuitars;
         }
     }
 }
