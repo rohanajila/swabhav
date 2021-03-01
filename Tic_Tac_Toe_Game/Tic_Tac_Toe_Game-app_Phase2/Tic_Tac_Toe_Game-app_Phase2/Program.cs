@@ -22,7 +22,7 @@ namespace Tic_Tac_Toe_Game_app_Phase2
             string name = GetFirstDataFromUser(game, players);
             while(true)
             {
-                Console.WriteLine(name + " Enter cell number: ");
+                Console.WriteLine(name + "'s turn. Enter cell number: ");
                 location = int.Parse(Console.ReadLine());
                 if(game.play(location))
                 {
@@ -32,7 +32,7 @@ namespace Tic_Tac_Toe_Game_app_Phase2
             name = GetFirstDataFromUser(game, players);
             while (true)
             {
-                Console.WriteLine(name + " Enter cell number: ");
+                Console.WriteLine(name + "'s turn. Enter cell number: ");
                 location = int.Parse(Console.ReadLine());
                 if (game.play(location))
                 {
@@ -41,7 +41,7 @@ namespace Tic_Tac_Toe_Game_app_Phase2
             }
             while(game.GetStatus().Equals("INPROGRESS"))
             {
-                Console.WriteLine(game.GetCurrentPlayer().Name + " Enter cell number: ");
+                Console.WriteLine(game.GetCurrentPlayer().Name + "'s turn. Enter cell number: ");
                 location = int.Parse(Console.ReadLine());
                 game.play(location);
             }
