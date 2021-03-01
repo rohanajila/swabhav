@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DIP_solution_app.Model
 {
-    class XmlLogger
+    class XmlLogger:ILogger
     {
+        public void Log(string logError)
+        {
+            Console.WriteLine("Printed error to XML File");
+            Console.WriteLine(logError);
+        }
     }
 }

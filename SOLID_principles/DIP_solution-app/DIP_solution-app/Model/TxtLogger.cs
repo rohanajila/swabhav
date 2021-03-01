@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace DIP_solution_app.Model
 {
-    class TxtLogger
+    class TxtLogger:ILogger
     {
+        public void Log(string error)
+        {
+            Console.WriteLine("Printed error to TXT file");
+            Console.WriteLine(error);
+        }
     }
 }
