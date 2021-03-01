@@ -14,6 +14,8 @@ namespace Tic_Tac_Toe_Game_app_Phase2.Model
         {
             _board = board;
         }
+        public Board Board { get => _board; }
+        public Result Result { get => _result; }
         public string CheckWinner()
         {
             if (_board.IsBoardFull())
@@ -33,19 +35,65 @@ namespace Tic_Tac_Toe_Game_app_Phase2.Model
         {
             int j = 0, resultCount = 1;
             Result result = Result.INPROGRESS;
+            for(int i=1;i<Board.PBoard.Length;i++)
+            {
+                if (!Board.PBoard[j].Equals("-") && (Board.PBoard[j].Equals(Board.PBoard[i])))
+                {
+                    if (++resultCount == Board.Size)
+                    {
+                        result = Result.WIN;
+                        break;
+                    }
+                }
+                else
+                {
+                    i = i + Board.Size;
+                    j = j + Board.Size;
+                    result = Result.INPROGRESS;
+                }
+                
+            }
+            return result;
 
         }
         public Result CheckColumn()
         {
+            int j = 0, resultCount = 1;
+            Result result = Result.INPROGRESS;
+            for (int i = Board.Size; i < Board.PBoard.Length; i++)
+            {
+                if (!Board.PBoard[j].Equals("-") && (Board.PBoard[j].Equals(Board.PBoard[i])))
+                {
+                    if (++resultCount == Board.Size)
+                    {
+                        result = Result.WIN;
+                        break;
+                    }
+                }
+                else
+                {
+
+                    j++;
+                    i = j;
+                    result = Result.INPROGRESS;
+                }
+
+            }
+            return result;
 
         }
         public Result CheckDiagonal()
         {
+            int j = 0, resultCount = 1;           
+            Result result = Result.INPROGRESS;
+            return result;
 
         }
         public Result CheckReverseDiagonal()
         {
-
+            int j = 0, resultCount = 1;            
+            Result result = Result.INPROGRESS;
+            return result;
         }
     }
 }
