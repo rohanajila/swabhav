@@ -28,11 +28,11 @@ namespace ShoppingCart_app
 
             c1.AddOrder(o1);
            // c1.AddOrder(o2);
-            printInfo(c1);
+            PrintInfo(c1);
             Console.Read();
 
         }
-        public static void printInfo(Customer obj)
+        public static void PrintInfo(Customer obj)
         {
             Console.WriteLine("Customer Details: " + obj.Id + ", " + obj.Name + ", " + obj.Address);
             obj.Orders.ForEach(Console.WriteLine);

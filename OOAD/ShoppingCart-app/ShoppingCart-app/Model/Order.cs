@@ -10,15 +10,21 @@ namespace ShoppingCart_app.Model
     {
         private int _id;
         private DateTime _date;
-        private List<LineItem> _items = new List<LineItem>();
+        private List<LineItem> _items;
+
         public Order(int id,DateTime date)
         {
             _id = id;
-            _date = date;            
+            _date = date;  
+            _items = new List<LineItem>();
         }
+
         public int Id{get=>_id; }
+
         public DateTime Date{get=> _date; }
+
         public List<LineItem> Items{get=> _items; }
+
         public void AddItem(LineItem item)
         {
             bool isAdded = false;
@@ -38,6 +44,7 @@ namespace ShoppingCart_app.Model
             else
                 _items.Add(item);
         }
+
         public double CheckoutCost()
         {
             double checkoutCost = 0;
@@ -47,6 +54,7 @@ namespace ShoppingCart_app.Model
             }
             return checkoutCost;
         }
+
         public override string ToString()
         {
             return "\nOrder Id: " + Id + ", Date: " + Date + ",\nOrder List: \n"+ string.Join(",",_items);
