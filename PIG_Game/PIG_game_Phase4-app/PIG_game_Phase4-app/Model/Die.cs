@@ -9,11 +9,15 @@ namespace PIG_game_Phase4_app.Model
     class Die
     {
         private int _value;
-        public int Value { get => _value; }
-        public void roll()
+
+        public int Value
         {
-            Random random = new Random();
-            _value = random.Next(1, 7);
+            get { return _value; }
+        }
+
+        public void Roll()
+        {
+            _value = new Random().Next(1, 7);
         }
 
     }
