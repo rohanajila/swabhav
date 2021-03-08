@@ -10,25 +10,25 @@ namespace DelegateExampleCases
     class Program
     {
         
-        public static void SayHello(string name)
+        public static void SayHello(string fname,string lname)
         {
-            Console.WriteLine(name+" says Hello!");
+            Console.WriteLine(fname+" "+lname+" says Hello!");
         }
 
-        public static void SayGoodBye(string name)
+        public static void SayGoodBye(string fname,string lname)
         {
-            Console.WriteLine(name+ " says Goodbye!");
-        }
+            Console.WriteLine(fname+" "+lname+ " says Goodbye!");
+        }/*
         public static void Case1()
         {
             Console.WriteLine("\nCase 1:\n");
-            DSayAnything x;
-            x = SayHello;
+          //  DSayAnything x;
+            Action<string,string> x = SayHello;
 
-            x("rohan");
+            x("rohan","ajila");
 
             x = SayGoodBye;
-            x("rohan");
+            x("rohan","ajila");
         }
         public static void Case2()
         {
@@ -69,15 +69,28 @@ namespace DelegateExampleCases
 
             });
 
+        }*/
+        
+        public static bool SaySomething(string fname,string lname)
+        {
+            // return fname + " " + lname + " says something";
+            return true;
         }
-
+        private static void Case6()
+        {
+            Func<string, string, bool> x = SaySomething;
+            
+            Console.WriteLine(x("rohan", "ajila"));
+        }
+        //public static bool Find
         static void Main(string[] args)
         {
-            Case1();
-            Case2();
-            Case3();
-            Case4();
-            Case5();
+            //Case1();
+            // Case2();
+            // Case3();
+            //  Case4();
+            // Case5();
+            Case6();
             Console.ReadKey();
         }
     }

@@ -8,6 +8,7 @@ using ObserverPatternEvent.Subscriber;
 namespace ObserverPatternEvent.Publisher
 {
     public delegate void DupdateEvent(Account account, string message, double amount);
+   
     public class Account
     {
         private int _no;
@@ -17,8 +18,11 @@ namespace ObserverPatternEvent.Publisher
         private const string _depositMessage = "credited to";
         private List<IListner> _listners;
 
+        Account acc;
         public event DupdateEvent notifyOntransaction = null;
 
+        public Account()
+        { }
         public Account(int no, string name, double balance)
         {
             _no = no;
