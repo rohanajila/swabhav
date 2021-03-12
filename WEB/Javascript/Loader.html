@@ -89,28 +89,23 @@
       }
     </style>
   </head>
-  <body onload="myFunction()">
+  <body>
     <p>Display loader when the checkbox is checked:</p>
 
     <label for="myCheck">Show:</label>
-    <input type="checkbox" id="myCheck" onclick="myFunction1()" />
+    <input type="checkbox" id="myCheck" onclick="myFunction()" />
 
-    <div id="loader"></div>
+    <div id="loader" style="display: none"></div>
 
     <script>
       function myFunction() {
         var checkBox = document.getElementById("myCheck");
         var loader = document.getElementById("loader");
         if (checkBox.checked == true) {
-          loader.style.display = "none";
-        } else {
           loader.style.display = "block";
+        } else {
+          loader.style.display = "none";
         }
-      }
-
-      function showPage() {
-        document.getElementById("loader").style.display = "none";
-        document.getElementById("myDiv").style.display = "block";
       }
     </script>
   </body>

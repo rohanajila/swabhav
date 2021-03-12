@@ -54,19 +54,27 @@
         value="50"
         class="slider"
         id="myRange"
+        oninput="myFunction()"
       />
-      <p>Value: <span id="demo"></span></p>
-      <div id="container"></div>
-    </div>
+      <span id="demo"></span></br>
+      <span id="text"></span></br>  
+    
 
     <script>
-      var slider = document.getElementById("myRange");
-      var output = document.getElementById("demo");
-      output.innerHTML = slider.value;
+      function myFunction() {
+        debugger;
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = "Value:" + slider.value;
 
-      slider.oninput = function () {
-        output.innerHTML = this.value;
-      };
+        var output1 = document.getElementById("text");
+        output1.innerHTML="";
+
+        for (var i = 1; i <= slider.value; i++) {
+          output1.innerHTML = output1.innerHTML+"<button>button" + i + "</button>";
+
+        }
+      }
     </script>
   </body>
 </html>
