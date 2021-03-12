@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      var a = [1, 2, 3, 4, 5];
+      function calcCube() {
+        for (var i = 0; i < a.length; i++) {
+          a[i] = a[i] * a[i] * a[i];
+        }
+      }
+      document.write("<p>Orignal Array</p>");
+      document.write(a);
+      calcCube();
+      document.write("<p>After performing cube operation </p>");
+      document.write(a);
+    </script>
+  </body>
+</html>

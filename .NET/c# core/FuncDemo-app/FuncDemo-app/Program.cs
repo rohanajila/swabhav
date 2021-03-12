@@ -43,8 +43,8 @@ namespace FuncDemo_app
         static void Main(string[] args)
         {
             Console.WriteLine("Addition: "+Case1());
-            Case2();
-            Case3();
+            Console.WriteLine("Subtraction: "+Case2());
+            Console.WriteLine("Multiplication: "+Case3());
             Console.Read();
         }
     }

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      var foo;
+      console.log(foo);
+      foo = 1234;
+      document.writeln(typeof foo);
+      foo = "abc";
+      document.writeln(typeof foo);
+      foo = {};
+      document.writeln(typeof foo);
+      foo = [];
+      document.writeln(typeof foo);
+
+      function myfunction() {
+        document.writeln(hello);
+      }
+      foo = myfunction();
+      document.writeln(typeof foo);
+    </script>
+  </body>
+</html>
