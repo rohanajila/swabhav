@@ -60,19 +60,6 @@
       function myFunction3() {
         document.body.style.backgroundColor = "green";
       }
-
-      window.onclick = function (event) {
-        if (!event.target.matches(".dropbtn")) {
-          var dropdowns = document.getElementsByClassName("dropdown-content");
-          var i;
-          for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains("show")) {
-              openDropdown.classList.remove("show");
-            }
-          }
-        }
-      };
     </script>
     <div class="dropdown">
       <button onclick="myFunction()" class="dropbtn">Dropdown</button>

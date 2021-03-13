@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <button id="but1" value="red">Red</button>
+    <button id="but2" value="blue">Blue</button>
+
+    <script>
+      document.querySelectorAll("button").forEach((item) => {
+        item.addEventListener("click", function () {
+          item.style.backgroundColor = item.value;
+        });
+      });
+    </script>
+  </body>
+</html>
