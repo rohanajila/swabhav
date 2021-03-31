@@ -1,0 +1,21 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Msg</title>
+</head>
+<body>
+    <div>
+        @for (int i = 0; i < 5; i++)
+        {
+            @("Hello " + ViewBag.msg) <br><br>
+        }
+    </div>
+</body>
+</html>

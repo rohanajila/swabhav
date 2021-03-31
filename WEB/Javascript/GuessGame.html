@@ -1,82 +1,152 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Bootstrap Example</title>
+
+
+  <link rel="stylesheet" href="css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
     <style>
-      .circle {
-        height: 50px;
-        width: 50px;
-        border-radius: 50%;
-        line-height: 50px;
-        text-align: center;
-        font-size: 25px;
-        cursor: pointer;
-        display: inline-block;
-        background-color: grey;
-      }
+        .circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            border: 1px solid rgb(0, 0, 0);
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .button {
+            position: relative;
+            background-color: #d31919;
+            border: none;
+            font-size: 20px;
+            color: #FFFFFF;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            -webkit-transition-duration: 0.4s;
+            /* Safari */
+            transition-duration: 0.4s;
+            text-decoration: none;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .button:after {
+            content: "";
+            background: #ee9090;
+            display: block;
+            position: absolute;
+            padding-top: 300%;
+            padding-left: 350%;
+            margin-left: -20px !important;
+            margin-top: -120%;
+            opacity: 0;
+            transition: all 0.8s
+        }
+
+        .button:active:after {
+            padding: 0;
+            margin: 0;
+            opacity: 1;
+            transition: 0s
+        }
+
+        .greencircle {
+            background-color: green;
+            color: white;
+        }
+
+        .redcircle {
+            color: white;
+            background-color: red;
+        }
+
+        .bluecircle {
+            color: white;
+            background-color: blue;
+        }
+
+        .textcenter {
+            text-align: center;
+            color: black;
+        }
+
+        li {
+            font-size: 20px;
+        }
     </style>
-    <title>Blue Ball Guess Game</title>
-  </head>
-  <body>
-    <h1>Welcome to Blue Ball Guess Game</h1>
-    <h2>Rules of the game:</h2>
-    <h3>1) Pick a ball from the list</h3>
-    <h3>
-      2) If selected ball turns red that means blue ball is after selected
-      ball(Guess is low).
-    </h3>
-    <h3>
-      3) If selected ball turns green that means blue ball is before it(Guess is
-      high).
-    </h3>
-    <h3>4) You have 5 chances to guesss</h3>
-    <h3>ALL THE BEST !</h3>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Ball Game</title>
+</head>
 
-    <table>
-      <script>
-        var guessNumber = Math.floor(Math.random() * 50 + 1);
-        for (let i = 1; i <= 50; i++) {
-          if (i == 1) {
-            document.write("<tr>");
-          }
-          document.write(
-            '<td><p class="circle" value="' + i + '">' + i + "</p></td>"
-          );
-          if (i == 25 || i == 50) {
-            document.write("</tr>");
-          }
-        }
+<body>
+    <center>
+      <div class="jumbotron">
+        <table id="rules">
+          <tr>
+              <td colspan="2" class="textcenter">
+                
+                  <h1>Blue Ball Game rules</h1>
+              </td>
 
-        var numberOfGuesses = 0;
-        document.querySelectorAll("p").forEach((item, key) => {
-          item.addEventListener("click", function () {
-            numberOfGuesses++;
-            if (item.innerHTML > guessNumber) {
-              item.style.backgroundColor = "green";
-              item.style.color = "white";
-            } else if (item.innerHTML < guessNumber) {
-              item.style.backgroundColor = "red";
-              item.style.color = "white";
-            } else if (item.innerHTML == guessNumber) {
-              item.style.backgroundColor = "blue";
-              item.style.color = "white";
-              setTimeout(Win, 500);
-            }
-            if (numberOfGuesses > 5) {
-              setTimeout(Lose, 500);
-            }
-          });
-        });
+          </tr>
+          <tr>
+              <td colspan="2">
+                  <ol>
+                      <li>Select a ball from the list</li>
+                      <li>If selected ball turns red that means blue ball is after selected ball</li>
+                      <li>If selected ball turns green that means blue ball is before it</li>
+                      <li>You will get only 3 Turns to guess a numnber</li>
+                  </ol>
+              </td>
 
-        function Lose() {
-          alert("Game over! The number was " + guessNumber + ". Play again");
-          location.reload();
-        }
+          </tr>
+          <tr>
+              <td>
+                  <div class="bluecircle circle"></div>
+              </td>
+              <td>
+                  <h4>Blue circle means your guess is correct</h4>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="redcircle circle"></div>
+              </td>
+              <td>
+                  <h4>Red circle means your guess is low</h4>
+              </td>
+          </tr>
+          <tr>
+              <td>
+                  <div class="greencircle circle"></div>
+              </td>
+              <td>
+                  <h4>Green circle means your guess is high</h4>
+              </td>
+          </tr>
+      </table>
+      </div>
+        <br />
+        <button onclick="play()" class="button" id="btnPlay">Play</button>
+        <br>
+        <table cellspacing="20" id="demo">
+          <br>
+        </table>
+      
+    </center>
+    <script src="BlueBall.js"></script>
+</body>
 
-        function Win() {
-          alert("Congratulations! you have Won!!!!");
-          location.reload();
-        }
-      </script>
-    </table>
-  </body>
 </html>

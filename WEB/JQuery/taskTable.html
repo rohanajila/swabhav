@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Table</title>
+    <script  src="jquery-3.6.0.js"></script>
+    <script >
+        $(document).ready(function(){
+            $("button").click(function(){
+              var number_of_rows = 1
+              var number_of_cols = 3
+              var id=1
+              var table_body = '<table border="1">';
+              table_body+="<tr><th>id</th><th>Task</th><th>Date</th></tr>";
+
+              for(var i=0;i<number_of_rows;i++){
+                table_body+='<tr>';
+                   
+                for(var j=0;j<number_of_rows;j++){
+                    table_body +='<td>'+id+'</td>';
+                    table_body +='<td>'+$('#task').val()+'</td>';
+                    table_body +='<td>'+new Date()+'</td>';
+                }
+                table_body+='</tr>';
+              }
+                table_body+='</table>';
+               $('#tableDiv').html(table_body);
+            });
+        });
+    </script>
+</head>
+<body>
+<div style="margin-top: 50px; margin-left: 250px">
+    Task:<input type="text"  id="task">    
+    <button>Add Task</button>
+    <div id="tableDiv" style="margin-top: 40px">
+        
+    </div>
+</div>
+</body>
+</html>

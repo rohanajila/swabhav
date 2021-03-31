@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <button id="PrintHello" onclick="printHello()">Print Hello</button>
+    <br /><br />
+    <button id="PrintTime" onclick="startWorker()">Print Time</button>
+    <p id="demo"></p>
+    <script>
+      function printHello() {
+        alert("Hello");
+      }
+      var w;
+
+      function startWorker() {
+        if (typeof Worker !== "undefined") {
+          if (typeof w == "undefined") {
+            w = new Worker("demoWorkers.js");
+          }
+          w.onmessage = function (event) {
+            document.getElementById("demo").innerHTML = event.data;
+          };
+        } else {
+          document.getElementById("result").innerHTML =
+            "Sorry! No Web Worker support.";
+        }
+      }
+    </script>
+  </body>
+</html>

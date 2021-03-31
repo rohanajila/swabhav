@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      function f1() {
+        for (i = 0; i < 10; i++) {
+          console.log(i);
+        }
+        console.log("outside loop:", i);
+      }
+      f1();
+      console.log("Outside function:", i);
+      f2();
+      function f2() {
+        console.log("Inside f2");
+      }
+      f2();
+      //f3();
+      f3 = function () {
+        console.log("Inside f3");
+      };
+      f3();
+    </script>
+  </body>
+</html>

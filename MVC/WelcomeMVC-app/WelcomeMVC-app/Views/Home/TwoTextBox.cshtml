@@ -1,0 +1,24 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TwoTextBox</title>
+</head>
+<body>
+    <div>
+        <form>
+            First Name : <input type="text" name="firstname" />
+            Last Name : <input type="text" name="lastname" />
+            <button type="submit">Submit</button>
+        </form>
+        <p>Hello  @ViewBag.firstname   @ViewBag.lastname</p>
+       
+    </div>
+</body>
+</html>

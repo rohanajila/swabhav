@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+        <style>
+            img {
+        width: 100px;
+        border-radius: 50px;
+        float: left;
+        margin-right: 20px;
+        margin-top: 50px;
+      }
+        </style>
+    </head>
+    <body>
+       
+            <img src="images/IMG_2612.jpeg" id="myimage">
+       
+        <input type="checkbox" id="myCheckbox">
+        <script>
+            $('document').ready(function(){
+                $('myCheckbox').click(function(){
+                    $('myimage').hide;
+                })
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RSVS MANAGEMENT STUDIO</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+	<script src="jquery-3.6.0.js"></script>
+</head>
+<body>
+	<h1>RSVS MANAGEMENT STUDIO</h1>
+	<div class="container">
+		<div class="box1">
+			PRODUCT NAME:<input type="text"  id="name"><br>
+			PRODUCT PRICE:<input type="text"  id="price"><br>
+			PRODUCT DISCOUNT:<input type="text"  id="discount"><br><br>
+			<button id="submitBTN">SUBMIT</button><br>
+		</div>
+	</div>  
+	 <br><br>
+    <section class="container1" id="resultSection">
+      <table class="tbl-todo">
+        <thead>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>PRICE</th>
+          <th>DISCOUNT</th>
+          <th>FINAL PRICE</th>          
+        </thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </section>
+ <script>
+
+        $(document).ready(function () {
+            $(".tbl-todo").hide();
+            let taskData = [];
+            let data = JSON.parse(localStorage.getItem("task"));
+            if (data != null) {
+                data.forEach(element => {
+                    $("#tbody").append(
+                        "<tr><td>" + element.id + "</td><td>" + element.name + "</td><td>" + element.price + "</td><td>" + element.discount + "</td><td>" +element.finalprice + "</td></tr>"
+                    );
+                });
+
+                
+                taskData.push(...data);
+            } else {
+                count = 0;
+            }
+
+            const nameval = $("#name");
+            const priceval=$("#price");
+            const discountval=$("#discount");
+            const btn = $("#submitBTN");
+
+            $("#submitBTN").click(function () {
+                count = data.length>1 ? data.length-1 : data.length;
+                count = ++count;
+                taskData.push({
+                    "id": count,
+                    "name": nameval.val(),
+                    "price":priceval.val(),
+                    "discount":discountval.val(),
+                    "finalprice": priceval.val()-discountval.val(),
+                })
+                localStorage.setItem("task", JSON.stringify(taskData));
+                $("#tbody").append(
+                    "<tr><td>" + count + "</td><td>" + nameval.val() + "</td><td>" + priceval.val() + "</td><td>" + discountval.val() + "</td><td>" + priceval.val()-discountval.val() + "</td></tr>"
+                );
+                $(".tbl-todo").show();
+            });
+        });
+
+    </script>
+</body>
+</html>

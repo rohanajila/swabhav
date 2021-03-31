@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactStoreEF-app", "ContactStoreEF-app\ContactStoreEF-app.csproj", "{9CCDBA31-A836-4FD1-904B-FE78B99AC079}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9CCDBA31-A836-4FD1-904B-FE78B99AC079}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCDBA31-A836-4FD1-904B-FE78B99AC079}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCDBA31-A836-4FD1-904B-FE78B99AC079}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCDBA31-A836-4FD1-904B-FE78B99AC079}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {24E3317A-E512-487F-8EAA-2F68044D7FF1}
+	EndGlobalSection
+EndGlobal
