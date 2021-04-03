@@ -1,0 +1,44 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FetchDepartmentFromDropDown</title>
+</head>
+<body>
+    <div>
+        @{
+            ViewBag.Title = "FetchDepartmentFromDropDown";
+        }
+        @using (Html.BeginForm("FetchDepartmentFromDropDown", "Home", FormMethod.Post))
+        {
+
+
+
+            <div>
+                @Html.DropDownList("Department", new List<SelectListItem> {
+             new SelectListItem{Text="IT" ,Value="1"},
+             new SelectListItem{Text="Sales" ,Value="2"},
+
+             new SelectListItem{Text="Marketing" ,Value="3"},
+             new SelectListItem{Text="HR" ,Value="4"}
+
+           }, "Select Department")
+            </div>
+
+            <div>
+                <input type="Submit" value="submit" />
+            </div>
+        }
+
+        <div>
+            <p>Selected Department no. is : @ViewBag.dropdown_value</p>
+        </div>
+    </div>
+</body>
+</html>

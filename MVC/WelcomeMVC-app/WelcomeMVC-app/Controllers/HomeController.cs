@@ -13,10 +13,10 @@ namespace WelcomeMVC_app.Controllers
         {
             
         }
-        public string Index()
+        public ActionResult Index()
         {
-            
-            return "Hello " + Request.QueryString["Name"]; 
+
+            return View();
            
         }
         public ActionResult Hello()
@@ -44,6 +44,16 @@ namespace WelcomeMVC_app.Controllers
         {
             ViewBag.firstname = firstname;
             ViewBag.lastname = lastname;
+            return View();
+        }
+        public ActionResult FetchColorFromDropDown(string colors)
+        {
+            ViewBag.colors = colors;
+            return View();
+        }
+        public ActionResult FetchDepartmentFromDropDown(FormCollection Department)
+        {
+            ViewBag.dropdown_value = Department[0];
             return View();
         }
     }

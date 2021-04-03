@@ -1,0 +1,28 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>FetchColorFromDropDown</title>
+</head>
+<body>
+    <div> 
+        <form >
+            <label for="colors">Choose a color:</label>
+            <select id="colors" name="colors">
+                <option >Red</option>
+                <option >Blue</option>
+                <option >Green</option>
+                <option >Yellow</option>
+            </select>
+            <input type="submit">
+        </form>
+        <p>Color: @ViewBag.colors</p>
+    </div>
+</body>
+</html>

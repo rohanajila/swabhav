@@ -1,0 +1,36 @@
+﻿@model  WelcomeMVC_app.Models.User
+@{
+    ViewBag.Title = "GetDetails";
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>GetDetails</title>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("GetDetails", "User", FormMethod.Post))
+        {
+
+            @Html.TextBoxFor(m => m.Id)
+            <br />
+            @Html.TextBoxFor(m => m.Name)
+
+            <div>
+                <input type="Submit" value="submit" />
+            </div>
+        }
+        <div>
+            <p>
+                @ViewData["userId"]
+            </p>
+            <p>
+                @ViewData["userName"]
+            </p>
+        </div>
+
+    </div>
+</body>
+</html>
