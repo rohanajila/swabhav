@@ -1,0 +1,59 @@
+﻿@model ContactEF_MVC_app.ViewModels.ContactVM
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+   
+    <h2 align="center">Contact Details</h2>
+    @using (Html.BeginForm())
+    {
+        <table cellpadding="10" align="center" border="1">
+            <tr align="center">
+                <td colspan="6">@Html.ActionLink("Add New Contact", "AddContact", "Home")</td>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Mobile Number</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+            @{
+                if (Model.Contacts.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6">No contacts to show! </td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var contact in Model.Contacts)
+                    {
+                        <tr>
+                            <td>@contact.ID</td>
+                            <td>@contact.FirstName</td>
+                            <td>@contact.LastName</td>
+                            <td>@contact.PhoneNo</td>
+                            <td>@contact.Address</td>
+                            <td>
+                                @Html.ActionLink("Edit", "UpdateContact", new { id = contact.ID })
+                                
+                                @Html.ActionLink("Delete", "DeleteContact", new { id = contact.ID })
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </table>
+    }
+</body>
+</html>

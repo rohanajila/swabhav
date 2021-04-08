@@ -1,0 +1,63 @@
+﻿@model TaskTableMVC_app.ViewModels.TaskVM
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<div align="right">
+    <button type="submit" class="btn btn-primary">
+        @Html.ActionLink("Add New Task", "AddTask","Task")
+    </button>
+</div>
+<h2 align="center">Tasks List</h2>
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Task Detail</th>
+                <th>DOI</th>
+                <th>Status</th>
+                <th>SubTask</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                if (Model.Tasks.Count == 0)
+                {
+                    <tr>
+                        <td colspan="6">No tasks!</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var task in Model.Tasks)
+                    {
+                        <tr>
+                            <td>@task.ID</td>
+                            <td>@task.TaskDetail</td>
+                            <td>@task.DOI</td>
+                            <td>@task.Status</td>
+                            <td>
+                                <button type="submit" class="btn btn-info">
+                                    @Html.ActionLink("Sub Task", "Index", "SubTask")
+                                </button>
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-success">
+                                    @Html.ActionLink("Edit", "UpdateTask","Task")
+                                </button>
+                               
+                                <button type="submit" class="btn btn-danger">
+                                    @Html.ActionLink("Delete", "DeleteTask","Task")
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                }
+            }
+        </tbody>
+    </table>
+}

@@ -1,0 +1,28 @@
+﻿@model TaskTableMVC_app.ViewModels.UpdateSubTask
+@{
+    ViewBag.Title = "UpdateSubTask";
+}
+
+<h2>UpdateSubTask</h2>
+<h2 align="center">Update Task</h2>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(x => x.SubTask.ID);
+        <div class="form-group">
+            <label for="SubTaskDetail">Sub Task Detail</label>
+            @Html.TextBoxFor(x => x.SubTask.TaskDetail, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="Status">Sub Task Status</label>
+            @Html.TextBoxFor(x => x.SubTask.Status, new { @class = "form-control" })
+        </div>
+        <div align="center">
+            <button type="submit" class="btn btn-outline-primary">Update Sub Task</button>
+        </div>
+        <div>
+            @Html.ActionLink("Back", "Index", "SubTask")
+        </div>
+    }
+</div>
+

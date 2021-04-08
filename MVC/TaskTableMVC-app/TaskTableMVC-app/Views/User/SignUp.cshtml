@@ -1,0 +1,33 @@
+﻿@model TaskTableMVC_app.ViewModels.UsersVM
+@{
+    ViewBag.Title = "SignUp";
+}
+
+<h2>SignUp</h2>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        <div class="form-group">
+            <label for="TaskName">Username</label>
+            @Html.TextBoxFor(x => x.User.Username, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.User.Username, "", new { style = "color:red" })
+        </div>
+        <div class="form-group">
+            <label for="TaskName">Role</label>
+            @Html.TextBoxFor(x => x.User.Role, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.User.Role, "", new { style = "color:red" })
+        </div>
+        <div class="form-group">
+            <label for="TaskName">Password</label>
+            @Html.PasswordFor(x => x.User.Password, new { @class = "form-control" })
+            @Html.ValidationMessageFor(x => x.User.Password, "", new { style = "color:red" })
+        </div>
+        <div >
+            <button type="submit" class="btn btn-outline-primary">SignUp</button>
+        </div>
+        <div>
+            @Html.ActionLink("Login", "Login")
+        </div>
+    }
+</div>
