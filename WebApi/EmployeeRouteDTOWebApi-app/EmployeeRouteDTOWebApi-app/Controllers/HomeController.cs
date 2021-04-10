@@ -4,12 +4,13 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using EmployeeWebApi_app.Models;
-using EmployeeWebApi_app.Service;
+using EmployeeRouteDTOWebApi_app.Service;
+using EmployeeRouteDTOWebApi_app.Models;
+using EmployeeRouteDTOWebApi_app.DTO;
 
-namespace EmployeeWebApi_app.Controllers
-{   
-    
+namespace EmployeeRouteDTOWebApi_app.Controllers
+{
+    [RoutePrefix("api/v1/employee")]
     public class HomeController : ApiController
     {
         EmployeeService employeeService = EmployeeService.GetInstance;
@@ -22,17 +23,18 @@ namespace EmployeeWebApi_app.Controllers
         {
             return employeeService.GetEmployeeById(id);
         }
-        public IHttpActionResult Post([FromBody]Employee employee)
+        public IHttpActionResult Post([FromBody] Employee employee)
         {
-            employeeService.AddEmployee(new Employee {
-                Id=employee.Id,
-                Name=employee.Name,
-                Designation=employee.Designation,
-                Salary=employee.Salary
+            employeeService.AddEmployee(new Employee
+            {
+                Id = employee.Id,
+                Name = employee.Name,
+                Designation = employee.Designation,
+                Salary = employee.Salary
             });
             return Ok("Added Succesfully");
         }
-        public IHttpActionResult Put(int id,[FromBody]Employee employee)
+        public IHttpActionResult Put(int id, [FromBody] Employee employee)
         {
             employeeService.EditEmployee(id, employee);
             return Ok("Updated Successfully");
@@ -42,6 +44,5 @@ namespace EmployeeWebApi_app.Controllers
             employeeService.DeleteEmployee(id);
             return Ok("Deleted Succesfully");
         }
-
     }
 }

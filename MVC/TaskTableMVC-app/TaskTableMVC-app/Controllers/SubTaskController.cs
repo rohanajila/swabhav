@@ -14,19 +14,19 @@ namespace TaskTableMVC_app.Controllers
     {
         SubTaskService subtaskService = SubTaskService.GetInstance;
         // GET: SubTask
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
             SubTaskVM subTaskVM = new SubTaskVM();
-            subTaskVM.SubTasks = subtaskService.GetSubTasks(id);
+            subTaskVM.SubTasks = subtaskService.GetSubTasks();
             return View(subTaskVM);
         }
-        public ActionResult AddSubTask(int id, int userid, SubTaskVM tasksVM)
+        public ActionResult AddSubTask()
         {          
-            return View(tasksVM);
+            return View();
         }
 
         [HttpPost]
-        public ActionResult AddSubTask(AddSubTaskVM tasksVM,int id)
+        public ActionResult AddSubTask(AddSubTaskVM tasksVM)
         {
             if (ModelState.IsValid)
             {
@@ -36,7 +36,7 @@ namespace TaskTableMVC_app.Controllers
                     DOI = DateTime.Now,                 
                     Status = tasksVM.SubTask.Status
                 });
-                return RedirectToAction("Index", new {});
+                return RedirectToAction("Index");
             }
             return View(tasksVM);
         }

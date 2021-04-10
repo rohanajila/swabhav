@@ -15,14 +15,7 @@ namespace TaskTableMVC_app.Controllers
         // GET: User
         UserService userService = UserService.GetInstance;
 
-        [Authorize(Roles = "Admin")]
-        public ActionResult Index()
-        {
-            UserVM UsersVM = new UserVM();
-            UsersVM.Users = userService.GetUsers();
-            return View(UsersVM);
-        }
-
+       
         public ActionResult SignUp()
         {
             return View();
@@ -58,12 +51,8 @@ namespace TaskTableMVC_app.Controllers
                 {
                     if (loginVM.Username == user.Username && loginVM.Password == user.Password)
                     {
-                        FormsAuthentication.SetAuthCookie(loginVM.Username,false);
-                        if (user.Role == "Admin")
-                        {
-                            return RedirectToAction("Index", "Tasks", "Task");
-                        }
-                        return RedirectToAction("Index", "Tasks","Task");
+                        FormsAuthentication.SetAuthCookie(loginVM.Username,false);                        
+                        return RedirectToAction("Index", "Task");
                     }
                 }
             }

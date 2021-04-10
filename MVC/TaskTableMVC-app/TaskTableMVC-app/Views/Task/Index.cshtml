@@ -5,8 +5,8 @@
 
 <h2>Index</h2>
 <div align="right">
-    <button type="submit" class="btn btn-primary">
-        @Html.ActionLink("Add New Task", "AddTask","Task")
+    <button type="submit" class="btn btn-outline-primary">
+        @Html.ActionLink("Add New Task", "AddTask", "Task")
     </button>
 </div>
 <h2 align="center">Tasks List</h2>
@@ -41,17 +41,17 @@
                             <td>@task.DOI</td>
                             <td>@task.Status</td>
                             <td>
-                                <button type="submit" class="btn btn-info">
+                                <button type="submit" class="btn btn-outline-primary" >
                                     @Html.ActionLink("Sub Task", "Index", "SubTask")
                                 </button>
                             </td>
                             <td>
-                                <button type="submit" class="btn btn-success">
-                                    @Html.ActionLink("Edit", "UpdateTask","Task")
+                                <button type="submit" class="btn btn-outline-primary">
+                                    @Html.ActionLink("Edit", "UpdateTask", "Task")
                                 </button>
                                
-                                <button type="submit" class="btn btn-danger">
-                                    @Html.ActionLink("Delete", "DeleteTask","Task")
+                                <button type="submit" class="btn btn-outline-primary">
+                                    @Html.ActionLink("Delete", "DeleteTask", "Task")
                                 </button>
                             </td>
                         </tr>

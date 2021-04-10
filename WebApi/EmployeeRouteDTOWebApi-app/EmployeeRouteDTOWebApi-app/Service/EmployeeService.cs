@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using EmployeeWebApi_app.Models;
+using EmployeeRouteDTOWebApi_app.Models;
 
-namespace EmployeeWebApi_app.Service
+namespace EmployeeRouteDTOWebApi_app.Service
 {
     public class EmployeeService
     {
@@ -45,16 +45,16 @@ namespace EmployeeWebApi_app.Service
         {
             _employees.Add(employee);
         }
-        public void EditEmployee(int id,Employee employee)
+        public void EditEmployee(int id, Employee employee)
         {
             Employee emp = _employees.Where(x => x.Id == id).SingleOrDefault();
             emp.Name = employee.Name;
             emp.Salary = employee.Salary;
             emp.Designation = employee.Designation;
-          
+
         }
         public void DeleteEmployee(int id)
-        {            
+        {
             _employees.Remove(_employees.Where(x => x.Id == id).SingleOrDefault());
         }
     }

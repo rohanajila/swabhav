@@ -9,7 +9,7 @@ namespace TaskTableMVC_app.Repository
 {
     interface ISubTaskRepository
     {
-        List<Subtask> GetSubTasks(int id);
+        List<Subtask> GetSubTasks();
         void AddSubTasks(Subtask tasks);
         void EditSubTasks(Subtask tasks);
         void DeleteSubTasks(int id);

@@ -40,9 +40,9 @@ namespace TaskTableMVC_app.Repository
         {
             return db.SubTasks.Where(x => x.ID == id).SingleOrDefault();
         }
-        public List<Subtask> GetSubTasks(int id)
+        public List<Subtask> GetSubTasks()
         {
-            return db.SubTasks.Where(x => x.Task.ID == id).ToList();
+            return db.SubTasks.ToList();
         }
     }
 }

@@ -14,17 +14,16 @@ namespace TaskTableMVC_app.Controllers
     {
         // GET: Task
         TaskService taskService = TaskService.GetInstance;
-        public ActionResult Index(int id)
+        public ActionResult Index()
         {
             TaskVM TasksVM = new TaskVM();
             TasksVM.Tasks = taskService.GetTasks();            
             return View(TasksVM);
         }
 
-        public ActionResult AddTask(TaskVM tasksVM)
-        {
-            
-            return View(tasksVM);
+        public ActionResult AddTask()
+        {            
+            return View();
         }
 
         [HttpPost]
@@ -38,7 +37,7 @@ namespace TaskTableMVC_app.Controllers
                     DOI = DateTime.Now,
                     Status = tasksVM.Status
                 });
-                return RedirectToAction("Index", new { });
+                return RedirectToAction("Index");
             }
             return View(tasksVM);
         }

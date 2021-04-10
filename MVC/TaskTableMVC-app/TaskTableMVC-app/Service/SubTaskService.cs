@@ -34,9 +34,9 @@ namespace TaskTableMVC_app.Service
             repository.DeleteSubTasks(id);
         }
 
-        public List<Subtask> GetSubTasks(int id)
+        public List<Subtask> GetSubTasks()
         {
-            return repository.GetSubTasks(id);
+            return repository.GetSubTasks();
         }
 
         public Subtask GetSubTaskByID(int id)
